@@ -1,0 +1,62 @@
+<html ng-app="unisphereApp" ng-controller="IndexCtrl">
+    <header>
+        <base href="/">
+        <title>Unisphere</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="icon" href="favicon.ico" type="icon" />
+        <meta name="theme-color" content="#29b6f6">
+        <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap3/dist/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+        <link type="text/css" rel="stylesheet" href="/app/css/style.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/jquery//dist/jquery.min.js"></script>
+        <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+        <script src="../node_modules/bootstrap3/dist/js/bootstrap.min.js"></script>
+    </header>
+    <main>
+        <nav class="light-blue lighten-1">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/notice" class="brand-logo">Unisphere</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/" ng-if="userLoggedIn">Notice Board</a></li>
+                        <li><a href="/event" ng-if="userLoggedIn">Events</a></li>
+                        <li><a href="/people" ng-if="userLoggedIn">People</a></li>
+                        <li><a ng-click="clickProfile()" ng-if="userLoggedIn">Profile</a></li>
+                        <li><a ng-click="logout()" ng-if="userLoggedIn">Logout</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <a href="/notice" class="brand-logo">Unisphere</a>
+                        <li><a href="/">Notice Board</a></li>
+                        <li><a href="/event">Events</a></li>
+                        <li><a href="/people">People</a></li>
+                        <li><a href="/profile" ng-if="userLoggedIn">Profile</a></li>
+                        <li><a href="/logout" ng-if="userLoggedIn">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div ui-view></div>
+        <script>$(".button-collapse").sideNav();</script>
+        <script src="../node_modules/angular-route/angular-route.min.js"></script>
+        <script src="../node_modules/angular-jwt/dist/angular-jwt.min.js"></script>
+        <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+        <script src="../node_modules/ngstorage/ngStorage.min.js"></script>
+        <script src="/app/js/index.js"></script>
+        <script src="/app/js/services.js"></script>
+        <script src="/app/js/toolkit.js"></script>
+        <script src="/app/js/controllers/IndexCtrl.js"></script>
+        <script src="/app/js/controllers/NoticeCtrl.js"></script>
+        <script src="/app/js/controllers/LoginCtrl.js"></script>
+        <script src="/app/js/controllers/PeopleCtrl.js"></script>
+        <script src="/app/js/controllers/EventCtrl.js"></script>
+    </main>
+    <footer class="page-footer light-blue lighten-1">
+        <div class="container">
+            <p class="center-align white-text">© 2017 Riley March</p>
+        </div>
+    </footer>
+</html>
